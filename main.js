@@ -8,8 +8,12 @@
 
     * Optional 
     TODO: Color Palette
+
+    * Information 
+    TODO: Document Code
 */
 
+// Create Grid with Specified Size
 function initializeGrid(size) {
     const gridContainer = document.querySelector(".grid-container");
 
@@ -33,6 +37,7 @@ function initializeGrid(size) {
     console.log("Function Work");
 }
 
+// Changes the Color
 function changeBrushColor(event) {
     const { color } = event.target.dataset;
 
@@ -41,6 +46,7 @@ function changeBrushColor(event) {
     brushColor = color;
 }
 
+// Asks the User for their desired Grid Size
 var gridSize = prompt("Choose a Canvas Size");
 
 initializeGrid(gridSize);
@@ -54,6 +60,7 @@ var brushColor = "green";
 
 colorButton.addEventListener("click", changeBrushColor);
 
+// Detection for drawing (Holding Down)
 gridContainer.addEventListener("mousedown", function (event) {
     drawState = true;
 });
