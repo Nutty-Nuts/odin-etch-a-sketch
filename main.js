@@ -33,15 +33,11 @@ function initializeGrid(size) {
 
         gridContainer.appendChild(gridRow);
     }
-
-    console.log("Function Work");
 }
 
 // Changes the Color
 function changeBrushColor(event) {
     const { color } = event.target.dataset;
-
-    console.log("Changed Color");
 
     brushColor = color;
 }
