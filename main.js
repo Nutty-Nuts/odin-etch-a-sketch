@@ -33,14 +33,26 @@ function initializeGrid(size) {
     console.log("Function Work");
 }
 
+function changeBrushColor(event) {
+    const { color } = event.target.dataset;
+
+    console.log("Changed Color");
+
+    brushColor = color;
+}
+
 var gridSize = prompt("Choose a Canvas Size");
 
 initializeGrid(gridSize);
 
 const gridContainer = document.querySelector(".grid-container");
 const gridCell = document.querySelectorAll(".grid-cell");
+const colorButton = document.querySelector("#color-palette");
 
 var drawState = false;
+var brushColor = "green";
+
+colorButton.addEventListener("click", changeBrushColor);
 
 gridContainer.addEventListener("mousedown", function (event) {
     drawState = true;
@@ -53,9 +65,7 @@ gridContainer.addEventListener("mouseup", function (event) {
 gridCell.forEach((cell) => {
     cell.addEventListener("mouseenter", function (event) {
         if (drawState == true) {
-            cell.style.backgroundColor = "gray";
+            cell.style.backgroundColor = brushColor;
         }
-
-        console.log("Paint");
     });
 });
