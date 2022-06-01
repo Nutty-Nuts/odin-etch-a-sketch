@@ -1,0 +1,28 @@
+:root {
+    --canvas: 960px;
+}
+
+.grid-container {
+    background-color: lightgrey;
+
+    width: var(--canvas);
+    height: var(--canvas);
+
+    display: flex;
+
+    flex-direction: row;
+}
+
+.grid-row {
+    display: flex;
+
+    flex: 1;
+
+    flex-direction: column;
+}
+
+.grid-cell {
+    background-color: gainsboro;
+
+    flex: 1;
+}
