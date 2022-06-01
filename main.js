@@ -47,7 +47,13 @@ function changeBrushColor(event) {
 }
 
 // Asks the User for their desired Grid Size
-var gridSize = prompt("Choose a Canvas Size");
+var gridSize = prompt("Choose a Canvas Size. Max of 100");
+
+if (gridSize > 100) {
+    alert("Maximum of 100");
+
+    location.reload();
+}
 
 initializeGrid(gridSize);
 
